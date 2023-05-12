@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="333803d9-8887-4506-bbfb-82cff7a3f432" name="Changes" comment="Added selenium and testng dependencies; Also added the latest driver's version for (currently) Chrome and Firefox browsers version.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/chromedriver113.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/geckodriver113.exe" afterDir="false" />
+    <list default="true" id="333803d9-8887-4506-bbfb-82cff7a3f432" name="Changes" comment="Added driver manager file for creating and managing drivers; driver manager factory file for instantiating specific drivers as well as chrome and firefox driver manager files for Chrome and Firefox browsers (all organized in Selenium_core folder)">
+      <change afterPath="$PROJECT_DIR$/src/TestNg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Pages/FSC_RealAccount_Registration_Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Tests/LandingPageTest1_FSC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,17 +31,48 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2PbXvpGflmKpQCgyA7DebkUNpYP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ivanp/Desktop/Automation projects/Fortrade_Account_Registration&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ivanp\Desktop\Automation projects\LandingPages_Real_Accounts_Registration\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Pages" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestNg.xml" type="TestNG">
+      <module name="LandingPages_Real_Accounts_Registration" />
+      <shortenClasspath name="NONE" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/TestNg.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,6 +105,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added selenium and testng dependencies; Also added the latest driver's version for (currently) Chrome and Firefox browsers version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added selenium and testng dependencies; Also added the latest driver's version for (currently) Chrome and Firefox browsers version." />
+    <MESSAGE value="Added : - Base page with base methods like ( click element, type text, select element from dropdown field, get text);&#10;- Base test for instantiation certain browser type and browser version;&#10;- FSC_RealAccount_Registration_Page class with elements and methods for accounts registration under FSC regulation;&#10;- LandingPageTest1_FSC test with concrete test data; &#10;- TestNg.xml file with test and parameters data." />
+    <MESSAGE value="Added driver manager file for creating and managing drivers; driver manager factory file for instantiating specific drivers as well as chrome and firefox driver manager files for Chrome and Firefox browsers (all organized in Selenium_core folder)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added driver manager file for creating and managing drivers; driver manager factory file for instantiating specific drivers as well as chrome and firefox driver manager files for Chrome and Firefox browsers (all organized in Selenium_core folder)" />
   </component>
 </project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Landing pages - real account registration">
+    <test name="Account registration - FSC regulative">
+        <parameter name="regulative" value="FSC"/>
+        <classes>
+            <class name="Tests.LandingPageTest1_FSC"/>
+        </classes>
+    </test>
+</suite>
