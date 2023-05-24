@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Landing pages - real account registration">
-    <test name="Account registration - FSC regulative">
-        <parameter name="regulative" value="FSC"/>
+    <test name="Account registration - FCA regulative">
+        <parameter name="regulative" value="FCA"/>
         <classes>
-            <class name="Tests.LandingPageTest1_FSC"/>
+            <class name="Tests.LandingPageTest1_FCA"/>
         </classes>
     </test>
 </suite>
