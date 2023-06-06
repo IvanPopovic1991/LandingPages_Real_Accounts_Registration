@@ -2,10 +2,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="Landing pages - real account registration">
-    <test name="Account registration - FCA regulative">
-        <parameter name="regulative" value="FCA"/>
+<!--    <test name="Account registration - FCA regulative">-->
+<!--        <parameter name="regulative" value="FCA"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.LandingPageTest1_FCA"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Account registration - FSC regulative">-->
+<!--        <parameter name="regulative" value="FSC"/>-->
+<!--        <classes>-->
+<!--            <class name="Tests.LandingPageTest1_FSC"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Account registration - Iiroc regulative">
+        <parameter name="regulative" value="iiroc"/>
         <classes>
-            <class name="Tests.LandingPageTest1_FCA"/>
+            <class name="Tests.LandingPageTest1_Iiroc"/>
         </classes>
     </test>
 </suite>
