@@ -30,6 +30,6 @@ public class DriverManagerFactory {
                 driverManager = new ChromeDriverManager();
             }break;
         }
-        return driverManager; //
+        return driverManager;
     }
 }

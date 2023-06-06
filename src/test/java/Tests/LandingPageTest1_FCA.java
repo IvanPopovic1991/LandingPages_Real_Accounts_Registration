@@ -30,7 +30,7 @@ public class LandingPageTest1_FCA extends BaseTest{
         "test" + System.currentTimeMillis() + "@mailinator.com", "44",
         System.currentTimeMillis() + "", "United Kingdom", "360", "GBP",
         "Aa1111", "15", "5", "1987", "Employed"
-        ,"$50,000-$100,000", "Employment", "$50,000 – $100,000",
+        ,"More then £250,000", "Employment", "£100,000 – £250,000",
         "Income", "Yes, from previous trading experience",
         "Less than 6 months", "I trade FX & CFDs 1-2 times a week.",
         "Less than 6 months", "I trade 1-2 times a week.");
