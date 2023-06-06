@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class FCA_RealAccount_Registration_Page extends BasePage {
-    public FCA_RealAccount_Registration_Page(WebDriver driver) {
+public class Asic_RealAccount_Registration_Page extends BasePage {
+    public Asic_RealAccount_Registration_Page(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -55,25 +55,25 @@ public class FCA_RealAccount_Registration_Page extends BasePage {
     @FindBy(xpath = "//select[@name='TradingExperience']")
     WebElement tradingExperience;
     @FindBy(xpath = "//select[@name='FrequencyOfTrades']")
-    WebElement frequencyOfTrading;
+    WebElement frequencyOfTrades;
     @FindBy(xpath = "//select[@name='OtherTradingExperience']")
     WebElement otherTradingExperience;
     @FindBy(xpath = "//select[@name='FrequencyOtherTradingExperience']")
     WebElement frequencyOfOtherOnlineTrading;
-    @FindBy(xpath = "//span[@for='FinancailQCheckbox']//div//p[1]")
-    WebElement checkboxIHaveReadTheRiskWarningBellowAndWishToProceed;
-    @FindBy(xpath = "//div[@class='fcaClass']//strong[text()='By checking the box to the left, I agree that I have " +
-            "read, understand, and accept the ']")
-    WebElement termsAndConditions;
-    @FindBy(xpath = "//input[@name='Send']")
-    WebElement sendBtn;
+    //    @FindBy (xpath = "//input[@name='FinancailQCheckbox']")
+//    WebElement checkboxIHaveReadTheRiskWarningBellowAndWishToProceed;
+    @FindBy(xpath = "//div[contains(@class,'asicClass') and text()='By checking the box to the left, I agree that " +
+            "I have read, understand, and accept the ']")
+    WebElement checkboxTermsAndConditions;
+    @FindBy(xpath = "//span[@for='TMDStatementPart1CheckBox']")
+    WebElement checkboxIAgree;
+    @FindBy(xpath = "//span[@for='TMDStatementPart2CheckBox']")
+    WebElement checkBoxIAgree2;
+    @FindBy(xpath = "//input[@name='SendTermsAgreementAsic']")
+    WebElement sendBtnIAgree;
     @FindBy(xpath = "//div[@class='welcomePopup']//..//div[@id='startTradingButton']")
     public WebElement continueBtn;
-    public void clickStartNowBtn() {
-        clickElement(getStartedNowBtn, "get started now button");
-    }
-
-    public void enterFirstName(String firstNameValue) {
+    public void enterFirstname(String firstNameValue) {
         typeText(firstName, firstNameValue, "first name field");
     }
 
@@ -89,17 +89,17 @@ public class FCA_RealAccount_Registration_Page extends BasePage {
         typeText(countryCode, countryCodeValue, "country code field");
     }
 
-    public void enterPhone(String phoneValue) {
-        typeText(phone, phoneValue, "phone field");
+    public void enterPhoneNumber(String phoneNumberValue) {
+        typeText(phone, phoneNumberValue, "phone number field");
     }
 
-    public void selectCountry(String countryValue) {
-        selectDropdownElement(country, countryValue, "from country field");
+    public void selectCountryOfResidence(String countryOfResidenceValue) {
+        selectDropdownElement(country, countryOfResidenceValue, "from country of residence field");
     }
 
     public void enterAddress(String addressValue) {
         typeText(address, addressValue, "address field");
-        clickElement(addressData, "address");
+        clickElement(addressData, " address" + addressData);
     }
 
     public void selectCurrency(String currencyValue) {
@@ -111,8 +111,8 @@ public class FCA_RealAccount_Registration_Page extends BasePage {
     }
 
     public void selectDateOfBirthday(String dateOfBirthdayValue, String dateOfBirthdayMonthValue, String dateOfBirthYearValue) {
-        selectDropdownElement(dateOfBirthday, dateOfBirthdayValue, "from date of birth field");
-        selectDropdownElement(dateOfBirthdayMonth, dateOfBirthdayMonthValue, "from month of birth field");
+        selectDropdownElement(dateOfBirthday, dateOfBirthdayValue, "from date of birthday");
+        selectDropdownElement(dateOfBirthdayMonth, dateOfBirthdayMonthValue, "from month of birthday");
         selectDropdownElement(dateOfBirthYear, dateOfBirthYearValue, "from year of birth field");
     }
 
@@ -128,78 +128,71 @@ public class FCA_RealAccount_Registration_Page extends BasePage {
         selectDropdownElement(sourceOfFunds, sourceOfFundsValue, "from source of funds field");
     }
 
-    public void selectValueOfSavingAndInvestments(String valueOfSavingAndInvestmentsValue) {
-        selectDropdownElement(valueOfSavingAndInvestments, valueOfSavingAndInvestmentsValue, "from Value of Saving and" +
-                "Investments");
+    public void selectValueOfSavingsAndInvestments(String valueOfSavingAndInvestmentsValue) {
+        selectDropdownElement(valueOfSavingAndInvestments, valueOfSavingAndInvestmentsValue,
+                "from value of saving and investments field");
     }
 
-    public void selectReasonForTrading(String reasonForTradingValue) {
-        selectDropdownElement(reasonForTrading, reasonForTradingValue, "from reason for trading field");
+    public void selectReasonForTrading(String reasonForTradingValue){
+        selectDropdownElement(reasonForTrading,reasonForTradingValue,"from reason for trading field");
     }
-
-    public void selectKnowledgeOfTrading(String knowledgeOfTradingValue) {
-        selectDropdownElement(knowledgeOfTrading, knowledgeOfTradingValue, "from Knowledge of trading field");
+    public void selectKnowledgeOfTrading(String knowledgeOfTradingValue){
+        selectDropdownElement(knowledgeOfTrading,knowledgeOfTradingValue,"from knowledge of trading field");
     }
-
-    public void selectTradingExperience(String tradingExperienceValue) {
-        selectDropdownElement(tradingExperience, tradingExperienceValue, "from trading experience field");
+    public void selectTradingExperience(String tradingExperienceValue){
+        selectDropdownElement(tradingExperience,tradingExperienceValue,"from FX & CFD trading experience field");
     }
-
-    public void selectFrequencyOfTrading(String frequencyOfTradingValue) {
-        selectDropdownElement(frequencyOfTrading, frequencyOfTradingValue, "from Frequency Of Trading field");
+    public void selectFrequencyOfTrades(String frequencyOfTradesValue){
+        selectDropdownElement(frequencyOfTrades,frequencyOfTradesValue,"from frequency of trades (FX & CFDs) field");
     }
-
-    public void selectOtherTradingExperience(String otherTradingExperienceValue) {
-        selectDropdownElement(otherTradingExperience, otherTradingExperienceValue, "from Other Online Trading Experience");
+    public void selectOtherOnlineTradingExperience(String otherTradingExpValue){
+        selectDropdownElement(otherTradingExperience,otherTradingExpValue,"from other online trading experience field");
     }
-
-    public void selectFrequencyOfOtherOnlineTrading(String frequencyOfOtherOnlineTradingValue) {
-        selectDropdownElement(frequencyOfOtherOnlineTrading, frequencyOfOtherOnlineTradingValue, "from Frequency Of Other" +
-        "Online Trading field");
+    public void selectFrequencyOfOtherOnlineTrading(String frequencyOfOtherOnlineTradingValue){
+        selectDropdownElement(frequencyOfOtherOnlineTrading,frequencyOfOtherOnlineTradingValue,
+                "from frequency of other online trading field");
     }
-
-    public void clickCheckboxIHaveReadTheRiskWarningBellowAndWishToProceed() {
-        clickElement(checkboxIHaveReadTheRiskWarningBellowAndWishToProceed, "checkbox I Have Read The Risk Warning " +
-        "Bellow And Wish To Proceed ");
-    }
-
     public void clickTermsAndConditions() {
-        clickElement(termsAndConditions, "terms and conditions checkbox");
+        clickElement(checkboxTermsAndConditions, "terms and conditions checkbox");
     }
-
-    public void clickSendButton() {
-        clickElement(sendBtn, "send button ");
+    public void clickCheckboxIAgree(){
+        clickElement(checkboxIAgree,"checkbox I agree");
     }
-
-    public void fcaAccountRegistration(String firstNameValue, String lastNameValue, String emailValue, String countryCodeValue,
-       String phoneValue, String countryValue, String addressValue, String currencyValue, String passwordValue,
-       String dateOfBirthdayValue, String dateOfBirthdayMonthValue, String dateOfBirthYearValue, String employmentStatusValue,
-       String annualIncomeValue, String sourceOfFundsValue, String valueOfSavingAndInvestmentsValue,
-       String reasonForTradingValue, String knowledgeOfTradingValue, String tradingExperienceValue, String frequencyOfTradingValue
-       , String otherTradingExperienceValue, String frequencyOfOtherOnlineTradingValue) {
-        clickStartNowBtn();
-        enterFirstName(firstNameValue);
+    public void clickCheckboxIAgree2(){
+        clickElement(checkBoxIAgree2,"checkbox  I Agree 2");
+    }
+    public void clickSendBtn(){
+        clickElement(sendBtnIAgree,"I agree button");
+    }
+    public void asicAccountRegistration(String firstNameValue,String lastNameValue, String emailValue, String countryCodeValue
+    , String phoneNumberValue, String countryOfResidenceValue,String addressValue,String currencyValue,String passwordValue
+    , String dateOfBirthdayValue, String dateOfBirthdayMonthValue, String dateOfBirthYearValue,String employmentStatusValue
+    , String annualIncomeValue,String sourceOfFundsValue, String valueOfSavingAndInvestmentsValue,String reasonForTradingValue
+    , String knowledgeOfTradingValue, String tradingExperienceValue,String frequencyOfTradesValue, String otherTradingExpValue
+    , String frequencyOfOtherOnlineTradingValue){
+        enterFirstname(firstNameValue);
         enterLastName(lastNameValue);
         enterEmail(emailValue);
         enterCountryCode(countryCodeValue);
-        enterPhone(phoneValue);
-        selectCountry(countryValue);
+        enterPhoneNumber(phoneNumberValue);
+        selectCountryOfResidence(countryOfResidenceValue);
         enterAddress(addressValue);
         selectCurrency(currencyValue);
         enterPassword(passwordValue);
-        selectDateOfBirthday(dateOfBirthdayValue, dateOfBirthdayMonthValue, dateOfBirthYearValue);
+        selectDateOfBirthday(dateOfBirthdayValue,dateOfBirthdayMonthValue,dateOfBirthYearValue);
         selectEmploymentStatus(employmentStatusValue);
         selectAnnualIncome(annualIncomeValue);
         selectSourceOfFunds(sourceOfFundsValue);
-        selectValueOfSavingAndInvestments(valueOfSavingAndInvestmentsValue);
+        selectValueOfSavingsAndInvestments(valueOfSavingAndInvestmentsValue);
         selectReasonForTrading(reasonForTradingValue);
         selectKnowledgeOfTrading(knowledgeOfTradingValue);
         selectTradingExperience(tradingExperienceValue);
-        selectFrequencyOfTrading(frequencyOfTradingValue);
-        selectOtherTradingExperience(otherTradingExperienceValue);
+        selectFrequencyOfTrades(frequencyOfTradesValue);
+        selectOtherOnlineTradingExperience(otherTradingExpValue);
         selectFrequencyOfOtherOnlineTrading(frequencyOfOtherOnlineTradingValue);
-        clickCheckboxIHaveReadTheRiskWarningBellowAndWishToProceed();
         clickTermsAndConditions();
-        clickSendButton();
+        clickCheckboxIAgree();
+        clickCheckboxIAgree2();
+        clickSendBtn();
     }
 }

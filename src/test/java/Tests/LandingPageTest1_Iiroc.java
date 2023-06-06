@@ -1,6 +1,7 @@
 package Tests;
 
-import Pages.FSC_RealAccount_Registration_Page;
+import Pages.Cysec_RealAccount_Registration_Page;
+import Pages.Iiroc_RealAccount_Registration_Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,7 +15,7 @@ import org.testng.annotations.Test;
 import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
-public class LandingPageTest1_FSC extends BaseTest {
+public class LandingPageTest1_Iiroc extends BaseTest {
     @BeforeMethod
     public void setUp() {
         baseSetUp("CHROME", "113");
@@ -22,33 +23,36 @@ public class LandingPageTest1_FSC extends BaseTest {
 
     @Test
     @Parameters({"regulative"})
-    public void FSC_RealAccount_Registration(String regulative) {
+    public void iiroc_RealAccount_Registration(String regulative) {
 
         driver.get("https://www.fortrade.com/minilps2/en/real-new/");
-
-        FSC_RealAccount_Registration_Page fscRealAccountRegistration = new FSC_RealAccount_Registration_Page(driver);
-        fscRealAccountRegistration.fscRealAccountRegistration("Testq", "Testa",
-                "test" + System.currentTimeMillis() + "@mailinator.com", "381", ""
-                        + System.currentTimeMillis(), "Serbia", "49", "Serbia", "Serbia",
-                "USD", "Aa1111", "10", "10", "1995",
-                "Employed", "Marketing/Advertising", "$50,000-$100,000",
-                "Employment", "None");
+        Iiroc_RealAccount_Registration_Page iiroc_realAccount_registration_page = new Iiroc_RealAccount_Registration_Page(driver);
+        iiroc_realAccount_registration_page.iirocAccountRegistration("Testq","Testa"
+        ,"test@"+System.currentTimeMillis()+"mailinator.com","1",System.currentTimeMillis()+
+        "","Canada","Alberta","4800","CAD","Aa1111"
+        ,"14","5","1989","326524789"
+        ,"Employed","C$20,000-C$70,000","Employment"
+        ,"C$35,000 - C$70,000","Capital Growth","No"
+        ,"No","Yes, from a relevant role in financial services"
+        ,"Between 1 and 2 years","I trade FX & CFDs 1-2 times a week."
+        ,"Between 1 and 2 years","I trade 1-2 times a week."
+        ,"$20k-$30k");
         /**
-        * ID of the original window
-        */
+         * ID of the original window
+         */
         String originalWindow = driver.getWindowHandle();
         /**
-        *Checking if there is no other windows open already
-        */
+         *Checking if there is no other windows open already
+         */
         assert driver.getWindowHandles().size() == 1;
         /**
-        * Wait for the new tab or the window
-        */
+         * Wait for the new tab or the window
+         */
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(numberOfWindowsToBe(2));
         /**
-        * Loop through until we find a new window handle or tab
-        */
+         * Loop through until we find a new window handle or tab
+         */
         for (String windowHandle : driver.getWindowHandles()) {
             if (!originalWindow.contentEquals(windowHandle)) {
                 driver.switchTo().window(windowHandle);
@@ -67,7 +71,7 @@ public class LandingPageTest1_FSC extends BaseTest {
                 "//..//div[@id='startTradingButton']"))));
         wdWait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//div[@class='welcomePopup']" +
                 "//..//div[@id='startTradingButton']"))));
-        fscRealAccountRegistration.clickElement(fscRealAccountRegistration.continueBtn, "Continue button");
+        iiroc_realAccount_registration_page.clickElement(iiroc_realAccount_registration_page.continueBtn, "Continue button");
         wdWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("body[data-lcreg='"+regulative +"']")));
         WebElement attribute = driver.findElement(By.cssSelector("body[data-lcreg='"+regulative+"']"));
         String regulativeValue = attribute.getAttribute("data-lcreg");
